@@ -1,0 +1,18 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "cSpell.enabled": true,
+  "cSpell.words": [],
+  "remote.autoForwardPorts": true,
+  "remote.localPortHost": "allInterfaces",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "MARK",
+    "FIX",
+    "TODO",
+    "[ ]",
+    "[x]"
+  ],
+}

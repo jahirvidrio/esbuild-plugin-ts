@@ -1,0 +1,57 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+  "name": "esbuild-plugin-ts"
+  ,"build": {
+    // Sets the run context to one level up instead of the .devcontainer folder.
+    "context": "..",
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "dockerfile": "Dockerfile",
+    // A set of name-value pairs containing Docker image build arguments that should be passed when building a Dockerfile.
+    "args": {
+      "USERNAME": "${localEnv:USER}"
+    }
+  }
+
+  // An array of Docker CLI arguments that should be used when running the container.
+  // ,"runArgs": []
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // ,"features": {}
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // ,"forwardPorts": []
+
+  // Uncomment the next line to run commands after the container is created.
+  // ,"postCreateCommand": "cat /etc/os-release"
+
+  // Connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+  ,"remoteUser": "${localEnv:USER}"
+
+  // Container environment variables.
+  //,"containerEnv": {}
+
+  // Set variables for VS Code and related sub-processes (terminals, tasks, debugging, etc.)
+  ,"remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin"
+  }
+
+  // Configure tool-specific properties
+  ,"customizations": {
+    "vscode": {
+      "extensions": [
+        "aaron-bond.better-comments",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "gruntfuggly.todo-tree",
+        "meganrogge.template-string-converter",
+        "mikestead.dotenv",
+        "ms-vscode-remote.remote-containers",
+        "peterschmalfeldt.explorer-exclude",
+        "pflannery.vscode-versionlens",
+        "streetsidesoftware.code-spell-checker",
+        "yoavbls.pretty-ts-errors"
+      ]
+    }
+  }
+}

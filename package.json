@@ -1,0 +1,28 @@
+{
+  "name": "eslint-plugin-ts",
+  "version": "0.0.0",
+  "description": "esbuild plugin that integrates TypeScript's exotic features, such as type checking and emit decorators",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jahirvidrio/esbuild-plugin-ts.git"
+  },
+  "keywords": [
+    "esbuild",
+    "esbuild-plugin",
+    "tsc",
+    "typescript",
+    "path-alias",
+    "decorators",
+    "type-checking"
+  ],
+  "author": "Jahir Vidrio",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jahirvidrio/esbuild-plugin-ts/issues"
+  },
+  "homepage": "https://github.com/jahirvidrio/esbuild-plugin-ts#readme"
+}
