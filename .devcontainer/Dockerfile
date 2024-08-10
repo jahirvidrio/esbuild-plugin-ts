@@ -10,7 +10,7 @@ ENV USERNAME=${USERNAME}
 
 # ! Instalación de dependencias
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y sudo git man locales
+    && apt-get install -y sudo git man locales bash-completion
 
 RUN npm install --global npm
 
