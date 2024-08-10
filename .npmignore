@@ -1,0 +1,10 @@
+# Source code
+src/
+
+# IDE
+.vscode/
+.devcontainer/
+
+.editorconfig
+.eslintrc.json
+.esbuild.js

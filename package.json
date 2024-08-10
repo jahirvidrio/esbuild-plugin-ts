@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-ts",
-  "version": "0.0.1-rev-1.0",
+  "version": "0.0.1-rev-1.1",
   "description": "esbuild plugin that integrates TypeScript's exotic features, such as type checking and emit decorators",
   "type": "module",
   "main": "dist/index.js",
