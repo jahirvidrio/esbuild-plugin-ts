@@ -1,3 +1,12 @@
 {
-  "extends": ["standard"]
+  "extends": ["standard-with-typescript"],
+  "parserOptions": {
+    "project": "tsconfig.eslint.json"
+  },
+  "overrides": [{
+    "files": ["tests/**/*.mjs"],
+    "parserOptions": {
+      "project": "tests/tsconfig.json"
+    }
+  }]
 }

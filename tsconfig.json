@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2021",
+    "rootDir": "src",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strictNullChecks": true,
+    "noImplicitOverride": true,
+    "declarationDir": "lib",
+    "skipLibCheck": true,
+    "checkJs": true
+  },
+  "include": ["src"]
+}
