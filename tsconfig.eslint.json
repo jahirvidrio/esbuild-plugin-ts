@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "rootDir": null
-  },
-  "include": ["src", "esbuild.mjs"]
-}

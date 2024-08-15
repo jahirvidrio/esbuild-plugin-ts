@@ -2,10 +2,15 @@
   "name": "esbuild-plugin-ts",
   "version": "0.0.1-rev-1.1",
   "description": "esbuild plugin that integrates TypeScript's exotic features, such as type checking and emit decorators",
-  "main": "lin/index.js",
-  "files": [
-    "lib"
-  ],
+  "type": "module",
+  "main": "./lib/cjs/index.js",
+  "types": "./@types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,18 +34,8 @@
   },
   "homepage": "https://github.com/jahirvidrio/esbuild-plugin-ts#readme",
   "devDependencies": {
-    "@types/node": "^22.2.0",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
     "del": "^7.1.0",
     "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^15.7.0",
-    "eslint-plugin-promise": "^6.6.0",
-    "typescript": "^5.5.4"
-  },
-  "peerDependencies": {
-    "esbuild": "^0.23.0"
+    "eslint-config-standard": "^17.1.0"
   }
 }
