@@ -1,3 +1,4 @@
+import path from 'path'
 import { TsConfigParseError } from './errors/index.js'
 
 /** @typedef {import('./tsconfig.d.ts').default} TsConfig */
@@ -12,24 +13,34 @@ export async function tsConfigParser (filepath) {
   const { parse } = await import('tsconfck')
 
   try {
-    /** @type {{ tsconfig?: TsConfig }} */
-    const { tsconfig: { compilerOptions = { } } = {} } = await parse(filepath)
+    const { tsconfig = { }, tsconfigFile } = await parse(filepath)
+    /** @type {TsConfig} */
+    const { compilerOptions = { } } = tsconfig
+    const {
+      rootDir,
+      baseUrl,
+      outDir,
+      outFile,
+      declarationDir,
+      declaration,
+      emitDecoratorMetadata,
+      experimentalDecorators,
+      paths = { }
+    } = compilerOptions
+
+    const dirname = path.dirname(tsconfigFile)
 
     return {
       compilerOptions: {
-        rootDir: compilerOptions.rootDir,
-        rootDirs: compilerOptions.rootDirs,
-        baseUrl: compilerOptions.baseUrl,
-        outDir: compilerOptions.outDir,
-        outFile: compilerOptions.outFile,
-        paths: compilerOptions.paths,
-        experimentalDecorators: compilerOptions.experimentalDecorators,
-        emitDecoratorMetadata: compilerOptions.emitDecoratorMetadata,
-        declaration: compilerOptions.declaration,
-        declarationDir: compilerOptions.declarationDir,
-        resolveJsonModule: compilerOptions.resolveJsonModule,
-        resolvePackageJsonExports: compilerOptions.resolvePackageJsonExports,
-        resolvePackageJsonImports: compilerOptions.resolvePackageJsonImports
+        rootDir: path.resolve(dirname, rootDir ?? '.'),
+        baseUrl: path.resolve(dirname, baseUrl ?? rootDir ?? '.'),
+        outDir: path.resolve(dirname, outDir ?? rootDir ?? '.'),
+        outFile: outFile ? path.resolve(dirname, outFile) : undefined,
+        declarationDir: path.resolve(dirname, declarationDir ?? outDir ?? rootDir ?? '.'),
+        declaration: declaration ?? false,
+        experimentalDecorators: experimentalDecorators ?? false,
+        emitDecoratorMetadata: emitDecoratorMetadata ?? false,
+        paths: paths ?? { }
       }
     }
   } catch (error) {
