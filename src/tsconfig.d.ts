@@ -2,8 +2,6 @@ export default interface TsConfig {
   compilerOptions?: {
     /** Specify the root folder within your source files. */
     rootDir?: string
-    /** Allow multiple folders to be treated as one when resolving modules. */
-    rootDirs?: string[]
     /** Specify the base directory to resolve non-relative module names. */
     baseUrl?: string
     /** Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
@@ -20,11 +18,5 @@ export default interface TsConfig {
     declaration?: boolean
     /** Specify the output directory for generated declaration files. */
     declarationDir?: string
-    /** Enable importing .json files */
-    resolveJsonModule?: boolean
-    /** Use the package.json 'exports' field when resolving package imports. */
-    resolvePackageJsonExports?: boolean
-    /** Use the package.json 'imports' field when resolving imports. */
-    resolvePackageJsonImports?: boolean
   }
 }
