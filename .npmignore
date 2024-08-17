@@ -8,4 +8,5 @@ tests/
 
 .editorconfig
 .eslintrc.json
-.esbuild.js
+esbuild.js
+tsconfig.json
