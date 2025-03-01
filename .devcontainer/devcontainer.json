@@ -29,7 +29,9 @@
   ,"remoteUser": "${localEnv:USER}"
 
   // Container environment variables.
-  //,"containerEnv": {}
+  ,"containerEnv": {
+    "TZ": "America/Mexico_City"
+  }
 
   // Set variables for VS Code and related sub-processes (terminals, tasks, debugging, etc.)
   ,"remoteEnv": {
@@ -49,7 +51,9 @@
         "peterschmalfeldt.explorer-exclude",
         "pflannery.vscode-versionlens",
         "streetsidesoftware.code-spell-checker",
-        "yoavbls.pretty-ts-errors"
+        "yoavbls.pretty-ts-errors",
+        "streetsidesoftware.code-spell-checker-spanish",
+        "vivaxy.vscode-conventional-commits"
       ]
     }
   }

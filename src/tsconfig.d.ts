@@ -18,5 +18,21 @@ export default interface TsConfig {
     declaration?: boolean
     /** Specify the output directory for generated declaration files. */
     declarationDir?: string
+    /** Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    target?: (
+      | "ES3"
+      | "ES5"
+      | "ES6"
+      | "ES2015"
+      | "ES2016"
+      | "ES2017"
+      | "ES2018"
+      | "ES2019"
+      | "ES2020"
+      | "ES2021"
+      | "ES2022"
+      | "ES2023"
+      | "ESNext"
+    )
   }
 }
